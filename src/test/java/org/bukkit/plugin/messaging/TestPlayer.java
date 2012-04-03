@@ -637,6 +637,14 @@ public class TestPlayer implements Player {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    public int getLogoutCooldownTicks() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setLogoutCooldownTicks(int ticks) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public boolean isFlying() {
         throw new UnsupportedOperationException("Not supported yet.");
     }

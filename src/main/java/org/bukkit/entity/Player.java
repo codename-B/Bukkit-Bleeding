@@ -502,6 +502,20 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
     public boolean canSee(Player player);
 
     /**
+     * Gets number of ticks a player should be kept in game after quitting
+     * 
+     * @return number of ticks the cooldown should last
+     */
+    public int getLogoutCooldownTicks();
+
+    /**
+     * Sets number of ticks a player should be kept in game after quitting
+     * 
+     * @param ticks number of ticks the cooldown should last
+     */
+    public void setLogoutCooldownTicks(int ticks);
+
+    /**
      * Checks to see if this player is currently flying or not.
      *
      * @return True if the player is flying, else false.
