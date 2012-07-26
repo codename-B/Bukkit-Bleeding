@@ -6,24 +6,22 @@ import java.util.Set;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 /**
- * Holds information for player chat and commands
- * @deprecated Chat is no longer synchronized on the main thread.
- * Listening to this event causes extra server overhead.
- * {@link AsyncPlayerChatEvent} is preferred.
+ * Holds information for player chat and commands.<br>
+ * <i>Note: This event is asynchronous. See {@link Event#isAsynchronous()}</i>
  */
-@Deprecated
-public class PlayerChatEvent extends PlayerEvent implements Cancellable {
+public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private String message;
     private String format = "<%1$s> %2$s";
     private final Set<Player> recipients;
 
-    public PlayerChatEvent(final Player player, final String message) {
-        super(player);
+    public AsyncPlayerChatEvent(final Player player, final String message) {
+        super(player, true);
         this.recipients = new HashSet<Player>(Arrays.asList(player.getServer().getOnlinePlayers()));
         this.message = message;
     }

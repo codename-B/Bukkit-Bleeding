@@ -13,6 +13,11 @@ public abstract class PlayerEvent extends Event {
         player = who;
     }
 
+    public PlayerEvent(final Player who, final boolean isAsync) {
+        super(isAsync);
+        player = who;
+    }
+
     /**
      * Returns the player involved in this event
      *
