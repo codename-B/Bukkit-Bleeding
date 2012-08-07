@@ -7,19 +7,19 @@ package org.bukkit.book;
 public interface Book {
     
     /**
-     * Replicates the net.minecraft.server call to check if a Book has a title
+     * Check if a Book has a title
      * @return boolean (hasTitle)
      */
     public boolean hasTitle();
 
     /**
-     * Replicates the net.minecraft.server call to check if a Book has an author
+     * Check if a Book has an author
      * @return boolean (hasAuthor)
      */
     public boolean hasAuthor();
     
     /**
-     * Replicates the net.minecraft.server call to check if a Book has pages
+     * Check if a Book has pages
      * @return boolean (hasPages)
      */
     public boolean hasPages();
